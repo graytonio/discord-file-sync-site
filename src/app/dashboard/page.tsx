@@ -202,7 +202,7 @@ export default async function Dashboard() {
 
           <main className="-mt-32">
             <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-              <div className="rounded-lg bg-white px-5 py-6 shadow sm:px-6">
+              <div className="h-full rounded-lg bg-white px-5 py-6 shadow sm:px-6">
                 {/* Your content */}
               </div>
             </div>
