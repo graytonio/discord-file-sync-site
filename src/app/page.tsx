@@ -15,7 +15,7 @@ export default async function Home() {
   return (
     <HydrateClient>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-        <div className="bg-white">
+        {/* <div className="bg-white"> */}
           <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
             <div className="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
               <svg
@@ -39,11 +39,11 @@ export default async function Home() {
               </svg>
               <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
                 <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  Boost your productivity. Start using our app today.
+                  Collaborate Better. Stay In Sync
                 </h2>
                 <p className="mt-6 text-pretty text-lg/8 text-gray-300">
-                  Ac euismod vel sit maecenas id pellentesque eu sed
-                  consectetur. Malesuada adipiscing sagittis vel nulla.
+                  Manage your important announcements and messages outside of Discord.
+                  Keep your community up to date without needing to fumble with editing.
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                   <a
@@ -67,7 +67,7 @@ export default async function Home() {
                 />
               </div>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </main>
     </HydrateClient>
