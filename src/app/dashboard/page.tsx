@@ -35,18 +35,9 @@ function classNames(...classes: string[]) {
 export default async function Dashboard() {
   return (
     <HydrateClient>
-      return (
       <>
-        {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-100">
-        <body class="h-full">
-        ```
-      */}
         <div className="min-h-full">
-          <div className="bg-gray-800 pb-32">
+          <div className="bg-gradient-to-b from-[#2e026d] to-[#15162c] pb-32">
             <Disclosure as="nav" className="bg-gray-800">
               <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="border-b border-gray-700">
