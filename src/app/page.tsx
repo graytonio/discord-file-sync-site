@@ -6,50 +6,29 @@ import { api, HydrateClient } from "~/trpc/server";
 
 import {
   ArrowPathIcon,
-  CloudArrowUpIcon,
   Cog6ToothIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
-  ServerIcon,
+  CloudIcon
 } from "@heroicons/react/20/solid";
 
 const features = [
   {
-    name: "Push to deploy.",
+    name: "Simple to use.",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.",
-    icon: CloudArrowUpIcon,
+      "Connect your links with a single command.",
+    icon: CloudIcon,
   },
   {
-    name: "SSL certificates.",
+    name: "Quick Updates.",
     description:
-      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-    icon: LockClosedIcon,
-  },
-  {
-    name: "Simple queues.",
-    description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus voluptas blanditiis et.",
+      "Changes to web pages are updated in minutes.",
     icon: ArrowPathIcon,
   },
   {
-    name: "Advanced security.",
+    name: "Configurable.",
     description:
-      "Iure sed ab. Aperiam optio placeat dolor facere. Officiis pariatur eveniet atque et dolor.",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Powerful API.",
-    description:
-      "Laudantium tempora sint ut consectetur ratione. Ut illum ut rem numquam fuga delectus.",
+      "Tailor your messages to best fit your community.",
     icon: Cog6ToothIcon,
-  },
-  {
-    name: "Database backups.",
-    description:
-      "Culpa dolorem voluptatem velit autem rerum qui et corrupti. Quibusdam quo placeat.",
-    icon: ServerIcon,
-  },
+  }
 ];
 
 export default async function Home() {
