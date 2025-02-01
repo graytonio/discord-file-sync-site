@@ -15,53 +15,59 @@ export default async function Home() {
   return (
     <HydrateClient>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-          <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-            Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-          </h1>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-            <Link
-              className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-              href="https://create.t3.gg/en/usage/first-steps"
-              target="_blank"
-            >
-              <h3 className="text-2xl font-bold">First Steps →</h3>
-              <div className="text-lg">
-                Just the basics - Everything you need to know to set up your
-                database and authentication.
-              </div>
-            </Link>
-            <Link
-              className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-              href="https://create.t3.gg/en/introduction"
-              target="_blank"
-            >
-              <h3 className="text-2xl font-bold">Documentation →</h3>
-              <div className="text-lg">
-                Learn more about Create T3 App, the libraries it uses, and how
-                to deploy it.
-              </div>
-            </Link>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <p className="text-2xl text-white">
-              {hello ? hello.greeting : "Loading tRPC query..."}
-            </p>
-
-            <div className="flex flex-col items-center justify-center gap-4">
-              <p className="text-center text-2xl text-white">
-                {session && <span>Logged in as {session.user?.name}</span>}
-              </p>
-              <Link
-                href={session ? "/api/auth/signout" : "/api/auth/signin"}
-                className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
+        <div className="bg-white">
+          <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
+            <div className="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+              <svg
+                viewBox="0 0 1024 1024"
+                aria-hidden="true"
+                className="absolute left-1/2 top-1/2 -z-10 size-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
               >
-                {session ? "Sign out" : "Sign in"}
-              </Link>
+                <circle
+                  r={512}
+                  cx={512}
+                  cy={512}
+                  fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
+                  fillOpacity="0.7"
+                />
+                <defs>
+                  <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
+                    <stop stopColor="#7775D6" />
+                    <stop offset={1} stopColor="#E935C1" />
+                  </radialGradient>
+                </defs>
+              </svg>
+              <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+                <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                  Boost your productivity. Start using our app today.
+                </h2>
+                <p className="mt-6 text-pretty text-lg/8 text-gray-300">
+                  Ac euismod vel sit maecenas id pellentesque eu sed
+                  consectetur. Malesuada adipiscing sagittis vel nulla.
+                </p>
+                <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+                  <a
+                    href="#"
+                    className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  >
+                    Get started
+                  </a>
+                  <a href="#" className="text-sm/6 font-semibold text-white">
+                    Learn more <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+              <div className="relative mt-16 h-80 lg:mt-8">
+                <img
+                  alt="App screenshot"
+                  src="https://tailwindui.com/plus/img/component-images/dark-project-app-screenshot.png"
+                  width={1824}
+                  height={1080}
+                  className="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+                />
+              </div>
             </div>
           </div>
-
-          {session?.user && <LatestPost />}
         </div>
       </main>
     </HydrateClient>
