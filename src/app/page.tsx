@@ -1,44 +1,34 @@
 import Link from "next/link";
 
 import { LatestPost } from "~/app/_components/post";
-import { auth } from "~/server/auth";
+import { auth, signIn } from "~/server/auth";
 import { api, HydrateClient } from "~/trpc/server";
 
 import {
   ArrowPathIcon,
   Cog6ToothIcon,
-  CloudIcon
+  CloudIcon,
 } from "@heroicons/react/20/solid";
 
 const features = [
   {
     name: "Simple to use.",
-    description:
-      "Connect your links with a single command.",
+    description: "Connect your links with a single command.",
     icon: CloudIcon,
   },
   {
     name: "Quick Updates.",
-    description:
-      "Changes to web pages are updated in minutes.",
+    description: "Changes to web pages are updated in minutes.",
     icon: ArrowPathIcon,
   },
   {
     name: "Configurable.",
-    description:
-      "Tailor your messages to best fit your community.",
+    description: "Tailor your messages to best fit your community.",
     icon: Cog6ToothIcon,
-  }
+  },
 ];
 
 export default async function Home() {
-  // const hello = await api.post.hello({ text: "from tRPC" });
-  // const session = await auth();
-
-  // if (session?.user) {
-  //   void api.post.getLatest.prefetch();
-  // }
-
   return (
     <HydrateClient>
       <main className="min-h-screen items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
@@ -73,15 +63,19 @@ export default async function Home() {
                 fumble with editing.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                <a
-                  href="#"
-                  className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                <form
+                  action={async () => {
+                    "use server";
+                    await signIn("discord", { redirectTo: "/dashboard" });
+                  }}
                 >
-                  Get started
-                </a>
-                <a href="#" className="text-sm/6 font-semibold text-white">
-                  Learn more <span aria-hidden="true">→</span>
-                </a>
+                  <button
+                    type="submit"
+                    className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  >
+                    Get started
+                  </button>
+                </form>
               </div>
             </div>
             <div className="relative mt-16 h-80 lg:mt-8">
@@ -98,16 +92,13 @@ export default async function Home() {
         <div className="bg-gray-900 py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-base/7 font-semibold text-indigo-400">
-                Everything you need
-              </h2>
               <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                No server? No problem.
+                Stop Editing Messages.
               </p>
               <p className="mt-6 text-lg/8 text-gray-300">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores impedit perferendis suscipit eaque, iste dolor
-                cupiditate blanditiis.
+                Instead host your announcements and documentations on the web
+                where they are easy to access. Simply link to the page and
+                forget about it.
               </p>
             </div>
             <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base/7 text-gray-300 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-16">
